@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:colorPrimary">@color/branding_color</item>
+        <item name="android:colorPrimaryDark">@color/secondary_color</item>
+        <item name="android:colorAccent">@color/accent_color</item>
+    </style>
+
+    <style name="ToolbarTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:colorPrimary">@color/branding_color</item>
+        <item name="android:colorPrimaryDark">@color/secondary_color</item>
+        <item name="android:colorAccent">@color/accent_color</item>
+    </style>
+
+    <style name="AppTheme.DrawerArrowStyle" parent="@style/Widget.AppCompat.DrawerArrowToggle">
+        <item name="spinBars">true</item>
+        <item name="color">@android:color/white</item>
+    </style>
+</resources>

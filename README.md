@@ -1,9 +1,9 @@
 # API Challenge 
 ### Problem
-Build an Android app that will display data from Guidebook servers. 
+Build an Android app that will display data from an API servers. 
 
 ### Approach
-I didn't have a lot of time to build it better, but basically the app pulls data from the Guidebook server and then displays it. 
+I didn't have a lot of time to build it better, but basically the app pulls data from the server and then displays it. 
 I created a custom client class that handles gathering the data from the server. All requests and processing is done off the main 
 UI thread to prevent the app from hanging or crashing. When data is being pulled or processed, a small loading bar is displayed to 
 give the user the indication that the app is doing work and that it isn't frozen. Error handling is also done within the client class

@@ -10,7 +10,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.shirwa.guidebook.R;
@@ -25,10 +24,12 @@ import java.util.List;
 public class GuideAdapter extends RecyclerView.Adapter<GuideAdapter.ViewHolder> implements View.OnClickListener {
     private List<Guide> mItems;
     private Activity context;
+    private ViewPagerAdapter viewPagerAdapter;
 
-    public GuideAdapter(Activity context) {
+    public GuideAdapter(Activity context, ViewPagerAdapter viewPagerAdapter) {
         mItems = new ArrayList<Guide>();
         this.context = context;
+        this.viewPagerAdapter = viewPagerAdapter;
     }
 
     @Override
@@ -56,8 +57,7 @@ public class GuideAdapter extends RecyclerView.Adapter<GuideAdapter.ViewHolder> 
     @Override
     public void onClick(View view) {
         int index = (Integer) view.getTag();
-        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.guidebook.com/" + mItems.get(index).getLinkUrl()));
-        context.startActivity(browserIntent);
+        viewPagerAdapter.setUrl("http://www.guidebook.com/" + mItems.get(index).getLinkUrl());
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {

@@ -1,6 +1,6 @@
 package com.shirwa.guidebook;
 
-import android.os.AsyncTask;
+
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -8,7 +8,6 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -18,11 +17,8 @@ import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.shirwa.guidebook.adapters.DrawerItemAdapter;
-import com.shirwa.guidebook.adapters.GuideAdapter;
-import com.shirwa.guidebook.fragments.GuideListFragment;
+import com.shirwa.guidebook.fragments.ViewPagerFragment;
 import com.shirwa.guidebook.utils.DrawerItem;
-import com.shirwa.guidebook.utils.Guide;
-import com.shirwa.guidebook.utils.GuidebookClient;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,7 +39,7 @@ public class MainActivity extends ActionBarActivity {
         setSupportActionBar(toolbar);
         setUpDrawer();
         setUpImageLoader();
-        getFragmentManager().beginTransaction().replace(R.id.content_frame, new GuideListFragment()).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, new ViewPagerFragment()).commit();
     }
 
     @Override
